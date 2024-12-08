@@ -44,7 +44,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     } else {
         env = loadEnv(mode, root)
 	}
-	console.log('command===', command, mode)
+	console.log('command===', command, mode, process.argv[3])
 	return {
 		base: env.VITE_BASE_PATH,
 		root: root,

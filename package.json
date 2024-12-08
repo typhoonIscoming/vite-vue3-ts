@@ -4,9 +4,16 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"i": "pnpm install",
+		"dev": "--mode env.local",
 		"build": "vue-tsc -b && vite build",
-		"preview": "vite preview"
+		"dev-server": "vite --mode dev",
+		"preview": "vite preview",
+		"build:local": "node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js build",
+		"clean": "npx rimraf node_modules",
+		"clean:cache": "npx rimraf node_modules/.cache",
+		"lint:eslint": "eslint --fix --ext .js,.ts,.vue ./src",
+		"lint:lint-staged": "lint-staged -c "
 	},
 	"dependencies": {
 		"element-plus": "^2.9.0",
@@ -14,6 +21,7 @@
 	},
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^5.2.1",
+		"lint-staged": "15.2.2",
 		"typescript": "~5.6.2",
 		"unocss": "^0.65.1",
 		"vite": "^6.0.1",
