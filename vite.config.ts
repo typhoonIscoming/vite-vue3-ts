@@ -1,6 +1,7 @@
 /** @format */
 
 import { resolve } from 'path';
+// eslint-disable-next-line
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import UnoCSS from 'unocss/vite';
@@ -44,7 +45,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     } else {
         env = loadEnv(mode, root)
 	}
-	console.log('command===', command, mode, process.argv[3])
+	console.log('command===', command, mode, env.VITE_BASE_PATH)
 	return {
 		base: env.VITE_BASE_PATH,
 		root: root,
@@ -65,5 +66,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 		},
 		// 项目使用的vite插件。 单独提取到build/vite/plugin中管理
 		plugins: createVitePlugins(),
+		build: {
+			minify: 'terser',
+			outDir: env.VITE_OUT_DIR || 'dist',
+			sourcemap: env.VITE_SOURCEMAP === 'true' ? 'inline' : false,
+		},
 	}
 }
