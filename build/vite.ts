@@ -12,7 +12,8 @@ export default function createVitePlugins() {
         Vue(),
         UnoCSS(),
         Legacy({
-            targets: ['defaults', 'ie>=11', ],
+            targets: ['defaults', 'ie>=11',],
+            additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
         }),
         progress(), // 打包进度插件
     ]
