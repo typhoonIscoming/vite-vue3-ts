@@ -70,6 +70,19 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 			outDir: env.VITE_OUT_DIR || 'dist',
 			sourcemap: env.VITE_SOURCEMAP === 'true' ? 'inline' : false,
 		},
+		resolve: {
+            extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.scss', '.css'],
+            alias: [
+                {
+                    find: 'vue-i18n',
+                    replacement: 'vue-i18n/dist/vue-i18n.cjs.js'
+                },
+                {
+                    find: /\@\//,
+                    replacement: `${pathResolve('src')}/`
+                }
+            ]
+        },
 		optimizeDeps: { include, exclude },
 	}
 }
