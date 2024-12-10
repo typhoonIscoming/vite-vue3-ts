@@ -36,11 +36,11 @@ export default function createVitePlugins() {
                 // 可额外添加需要 autoImport 的组件
                 {
                     '@/hooks/web/useI18n': ['useI18n'],
-                    '@/hooks/web/useMessage': ['useMessage'],
-                    '@/hooks/web/useTable': ['useTable'],
-                    '@/hooks/web/useCrudSchemas': ['useCrudSchemas'],
-                    '@/utils/formRules': ['required'],
-                    '@/utils/dict': ['DICT_TYPE']
+                    // '@/hooks/web/useMessage': ['useMessage'],
+                    // '@/hooks/web/useTable': ['useTable'],
+                    // '@/hooks/web/useCrudSchemas': ['useCrudSchemas'],
+                    // '@/utils/formRules': ['required'],
+                    // '@/utils/dict': ['DICT_TYPE']
                 }
             ],
             dts: 'src/types/auto-imports.d.ts',

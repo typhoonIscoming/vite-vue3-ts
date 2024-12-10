@@ -3,10 +3,9 @@
 import { resolve } from 'path';
 // eslint-disable-next-line
 import { defineConfig, loadEnv } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import UnoCSS from 'unocss/vite';
 import type { ConfigEnv, UserConfig } from 'vite';
 import createVitePlugins from './build/vite';
+import { include, exclude } from './build/optimize';
 
 
 // https://vite.dev/config/
@@ -71,5 +70,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 			outDir: env.VITE_OUT_DIR || 'dist',
 			sourcemap: env.VITE_SOURCEMAP === 'true' ? 'inline' : false,
 		},
+		optimizeDeps: { include, exclude },
 	}
 }
