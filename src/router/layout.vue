@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { defineComponent } from 'vue';
-import { useDesign } from '@/hooks/useDesign';
+import { useDesign } from '@/hooks/useDesign.ts';
 
 const { getPrefixCls } = useDesign()
 
@@ -10,8 +10,7 @@ export default defineComponent({
     name: 'Layout',
     setup() {
         return () => (
-            <section class={[prefixCls, `${prefixCls}__${layout.value}`, 'w-[100%] h-[100%] relative']}>
-
+            <section class={[prefixCls, 'w-[100%] h-[100%] relative']}>
             </section>
         )
     },

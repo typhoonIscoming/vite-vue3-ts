@@ -3,6 +3,7 @@ import Vue from '@vitejs/plugin-vue';
 import UnoCSS from 'unocss/vite';
 import Legacy from '@vitejs/plugin-legacy';
 import progress from 'vite-plugin-progress';
+import VueJsx from '@vitejs/plugin-vue-jsx'
 
 import ElementPlus from 'unplugin-element-plus/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -17,6 +18,7 @@ export default function createVitePlugins() {
     return [
         Vue(),
         UnoCSS(),
+        VueJsx(),
         Legacy({
             targets: ['defaults', 'ie>=11',],
             additionalLegacyPolyfills: ["regenerator-runtime/runtime"],

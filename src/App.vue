@@ -1,19 +1,27 @@
 <!-- @format -->
 
 <script setup lang="ts">
+import { RouterView } from 'vue-router'
+import ConfigGlobal from './components/ConfigGlobal';
 import HelloWorld from './components/HelloWorld.vue';
+import Layout from '@/router/layout.vue';
 </script>
 
 <template>
-	<div>
+	<!-- <div>
 		<a href="https://vite.dev" target="_blank">
 			<img src="/vite.svg" class="logo" alt="Vite logo" />
 		</a>
 		<a href="https://vuejs.org/" target="_blank">
 			<img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
 		</a>
-	</div>
-	<HelloWorld msg="Vite + Vue" />
+	</div>-->
+	<!-- <HelloWorld msg="Vite + Vue" />  -->
+	<ConfigGlobal>
+		<!-- <router-view /> -->
+		<Layout />
+		<!-- <HelloWorld msg="Vite + Vue" />  -->
+	</ConfigGlobal>
 </template>
 
 <style scoped>

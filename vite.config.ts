@@ -72,7 +72,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 			sourcemap: env.VITE_SOURCEMAP === 'true' ? 'inline' : false,
 		},
 		resolve: {
-            extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.scss', '.css'],
+            extensions: ['.vue', '.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.scss', '.css'],
             alias: [
                 {
                     find: 'vue-i18n',

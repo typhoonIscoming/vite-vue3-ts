@@ -10,20 +10,20 @@ const include = [
     // 'qrcode',
     'unocss',
     'vue-router',
-    'vue-types',
+    // 'vue-types',
     // 'vue-i18n',
     // 'crypto-js',
     // 'cropperjs',
     'lodash-es',
     'nprogress',
     'web-storage-cache',
-    '@iconify/iconify',
+    // '@iconify/iconify',
     /**
      * 主要功能：状态管理（useState， useStorage）、传感器（useMouse、useWindowSize、useGeolocation）
      * 副作用（useTitle、useFavicon）、时间(useInterval,useTimeout)、动画和过渡（useTransition、useSpring）等
     */
     '@vueuse/core',
-    '@zxcvbn-ts/core', // 计算密码强度
+    // '@zxcvbn-ts/core', // 计算密码强度
     // 'echarts/core',
     // 'echarts/charts',
     // 'echarts/components',

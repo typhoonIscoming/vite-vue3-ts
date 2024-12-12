@@ -1,4 +1,4 @@
-@use './variables.scss' as *;
+@use './variable.scss' as *;
 // 导出变量
 :export {
     namespace: $namespace;
