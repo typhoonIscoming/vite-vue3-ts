@@ -1,3 +1,5 @@
+import Layout from './layout.vue';
+
 
 
 export default [
@@ -10,7 +12,7 @@ export default [
         children: [
             {
                 path: 'index',
-                component: () => import('@/views/Home/Index.vue'),
+                component: () => import('@/views/Home/index.vue'),
                     name: 'Index',
                     meta: {
                     title: '首页',
