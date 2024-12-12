@@ -2,7 +2,8 @@
 
 import { resolve } from 'path';
 // eslint-disable-next-line
-import { defineConfig, loadEnv } from 'vite';
+// defineConfig
+import { loadEnv } from 'vite';
 import type { ConfigEnv, UserConfig } from 'vite';
 import createVitePlugins from './build/vite';
 import { include, exclude } from './build/optimize';
