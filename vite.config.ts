@@ -63,6 +63,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
             //     rewrite: (path) => path.replace(new RegExp(`^/admin-api`), ''),
             //   },
             // },
+            // https: {
+            //     key: resolve(__dirname, './cert/localhost-key.pem'),
+            //     cert: resolve(__dirname, './cert/localhost-cert.pem')
+            // }
 		},
 		// 项目使用的vite插件。 单独提取到build/vite/plugin中管理
 		plugins: createVitePlugins(),

@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { defineComponent } from 'vue';
+import { defineComponent, h, Fragment } from 'vue';
 import { useDesign } from '@/hooks/useDesign.ts';
 import Camera from '@/components/camera/src/camera.vue';
 
