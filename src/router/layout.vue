@@ -1,6 +1,7 @@
 <script lang="tsx">
 import { defineComponent } from 'vue';
 import { useDesign } from '@/hooks/useDesign.ts';
+import Camera from '@/components/camera/src/camera.vue';
 
 const { getPrefixCls } = useDesign()
 
@@ -11,6 +12,7 @@ export default defineComponent({
     setup() {
         return () => (
             <section class={[prefixCls, 'w-[100%] h-[100%] relative']}>
+                <Camera />
             </section>
         )
     },

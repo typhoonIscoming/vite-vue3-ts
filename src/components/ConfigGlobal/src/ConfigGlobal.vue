@@ -23,5 +23,7 @@ const props = defineProps({
 
 </script>
 <style lang="scss" scoped>
-
+.configGlobal{
+    min-height: 100vh;
+}
 </style>
