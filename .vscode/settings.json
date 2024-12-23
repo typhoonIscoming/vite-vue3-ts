@@ -4,7 +4,7 @@
 	"editor.tabSize": 4,
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
-	"editor.renderWhitespace": "all",
+	"editor.renderWhitespace": "none",
 	"editor.guides.indentation": true,
 	"editor.guides.bracketPairs": true,
 	"files.eol": "\n",
