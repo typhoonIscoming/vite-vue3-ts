@@ -7,6 +7,7 @@ import { setupStore } from '@/store'
 
 // 路由
 import router, { setupRouter } from '@/router'
+import Logger from '@/utils/Logger'
 
 // 引入 element-plus
 import { setupElementPlus } from '@/elementPlus'
@@ -30,3 +31,4 @@ const setupAll = async () => {
 	app.mount('#app')
 }
 setupAll()
+Logger.prettyPrimary(`欢迎使用`, import.meta.env.VITE_APP_TITLE)
