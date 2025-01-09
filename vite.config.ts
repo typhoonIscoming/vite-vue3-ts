@@ -69,11 +69,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 		},
 		// 项目使用的vite插件。 单独提取到build/vite/plugin中管理
 		plugins: createVitePlugins(),
-		build: {
-			minify: 'terser',
-			outDir: env.VITE_OUT_DIR || 'dist',
-			sourcemap: env.VITE_SOURCEMAP === 'true' ? 'inline' : false
-		},
 		resolve: {
 			extensions: ['.vue', '.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.scss', '.css'],
 			alias: [
