@@ -7,12 +7,15 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Approve: typeof import('./../components/SimpleProcessDesigner/nodes/approve.vue')['default']
     Camera: typeof import('./../components/camera/src/camera.vue')['default']
     ConfigGlobal: typeof import('./../components/ConfigGlobal/src/ConfigGlobal.vue')['default']
-    HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
+    EndNode: typeof import('./../components/SimpleProcessDesigner/nodes/endNode.vue')['default']
+    HelloWorld: (typeof import('./../components/HelloWorld.vue'))['default']
     Layout: (typeof import('./../components/layout/Layout.vue'))['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SimpleProcessDesigner: typeof import('./../components/SimpleProcessDesigner/index.vue')['default']
+    StartNode: typeof import('./../components/SimpleProcessDesigner/nodes/startNode.vue')['default']
   }
 }

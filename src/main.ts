@@ -29,6 +29,11 @@ const setupAll = async () => {
 	await router.isReady()
 
 	app.mount('#app')
+
+	// 屏蔽错误信息
+	// app.config.errorHandler = () => null
+	// 屏蔽警告信息
+	app.config.warnHandler = () => null
 }
 setupAll()
 Logger.prettyPrimary(`欢迎使用`, import.meta.env.VITE_APP_TITLE)
