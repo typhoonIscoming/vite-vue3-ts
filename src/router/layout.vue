@@ -1,7 +1,6 @@
 <script lang="tsx">
-	import { defineComponent, h, Fragment } from 'vue'
+	import { defineComponent, h } from 'vue'
 	import { useDesign } from '@/hooks/useDesign.ts'
-	import Camera from '@/components/camera/src/camera.vue'
 	import { RouterView } from 'vue-router'
 
 	const { getPrefixCls } = useDesign()

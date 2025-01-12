@@ -1,11 +1,13 @@
 <template>
 	<div class="home">
 		<XHProcessNodeTree v-if="processNodeTree" :flow-node="processNodeTree" />
+		<Camera />
 	</div>
 </template>
 <script setup lang="tsx">
 	import XHProcessNodeTree from '@/components/SimpleProcessDesigner'
 	import { NodeType, NodeId } from '@/components/SimpleProcessDesigner/config/consts'
+	import Camera from '@/components/camera/src/camera.vue'
 
 	const processNodeTree = ref()
 

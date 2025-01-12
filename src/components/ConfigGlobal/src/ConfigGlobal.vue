@@ -1,9 +1,7 @@
 <template>
-	<div class="configGlobal">
-		<ElConfigProvider :namespace="variables.elNamespace" :message="{ max: 5 }">
-			<slot></slot>
-		</ElConfigProvider>
-	</div>
+	<ElConfigProvider :namespace="variables.elNamespace" :message="{ max: 5 }">
+		<slot></slot>
+	</ElConfigProvider>
 </template>
 <script lang="tsx" setup>
 import { ComponentSize, ElConfigProvider } from 'element-plus'

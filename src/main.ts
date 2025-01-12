@@ -19,6 +19,11 @@ import App from './App.vue'
 // 创建实例
 const setupAll = async () => {
 	const app = createApp(App)
+
+	// 屏蔽错误信息
+	// app.config.errorHandler = () => null
+	// 屏蔽警告信息
+	app.config.warnHandler = () => null
 	setupStore(app)
 
 	setupElementPlus(app)
@@ -29,11 +34,6 @@ const setupAll = async () => {
 	await router.isReady()
 
 	app.mount('#app')
-
-	// 屏蔽错误信息
-	// app.config.errorHandler = () => null
-	// 屏蔽警告信息
-	app.config.warnHandler = () => null
 }
 setupAll()
 Logger.prettyPrimary(`欢迎使用`, import.meta.env.VITE_APP_TITLE)
