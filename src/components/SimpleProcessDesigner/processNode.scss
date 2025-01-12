@@ -1,0 +1,108 @@
+/* 节点阴影 */
+.node-shadow-box {
+	box-shadow: 0 10px 12px 0 rgb(10 30 65 / 16%);
+}
+.node-width {
+	width: 200px;
+}
+/* 开始节点 */
+.start-node {
+	border-radius: 30px;
+}
+.node-wrapper{
+	cursor: pointer;
+	.node-container{
+		@extend .node-width;
+		border: 1px solid #fafafa;
+	}
+}
+// 结束节点包装
+.end-node-wrapper {
+	.end-node-box {
+		display: flex;
+		width: 80px;
+		height: 36px;
+		color: #212121;
+		border: 2px solid #fafafa;
+		border-radius: 30px;
+		box-sizing: border-box;
+		justify-content: center;
+		align-items: center;
+
+		&.status-pass {
+			background-color: #a9da90;
+			border-color: #6bb63c;
+		}
+
+		&.status-pass:hover {
+			border-color: #6bb63c;
+		}
+
+		&.status-reject {
+			background-color: #f6e5e5;
+			border-color: #e47470;
+		}
+
+		&.status-reject:hover {
+			border-color: #e47470;
+		}
+
+		&.status-cancel {
+			background-color: #eaeaeb;
+			border-color: #919398;
+		}
+
+		&.status-cancel:hover {
+			border-color: #919398;
+		}
+	}
+}
+// 节点连线处理
+.node-handler-wrapper {
+	position: relative;
+	display: flex;
+	height: 70px;
+	align-items: center;
+	user-select: none;
+	justify-content: center;
+	flex-direction: column;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		z-index: 0;
+		width: 2px;
+		height: 100%;
+		margin: auto;
+		background-color: #dedede;
+		content: '';
+	}
+
+	.node-handler {
+		.add-icon {
+			position: relative;
+			top: -5px;
+			display: flex;
+			width: 25px;
+			height: 25px;
+			color: #fff;
+			cursor: pointer;
+			background-color: #0089ff;
+			border-radius: 50%;
+			align-items: center;
+			justify-content: center;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.node-handler-arrow {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		display: flex;
+		transform: translateX(-50%);
+	}
+}

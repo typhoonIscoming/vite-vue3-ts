@@ -13,6 +13,7 @@ declare module 'vue' {
     EndNode: typeof import('./../components/SimpleProcessDesigner/nodes/endNode.vue')['default']
     HelloWorld: (typeof import('./../components/HelloWorld.vue'))['default']
     Layout: (typeof import('./../components/layout/Layout.vue'))['default']
+    NodeHandler: typeof import('./../components/SimpleProcessDesigner/nodeHandler.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SimpleProcessDesigner: typeof import('./../components/SimpleProcessDesigner/index.vue')['default']

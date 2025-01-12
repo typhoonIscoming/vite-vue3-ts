@@ -1,5 +1,5 @@
 <template>
-	<div class="simple-process-wrapper">
+	<div class="simple-process-wrapper w-fit">
 		<!--开始节点-->
 		<XHStartNode
 			v-if="currentNode && currentNode.type === NodeType.START_USER_NODE"
@@ -42,6 +42,7 @@ const props = defineProps({
 const currentNode = useWatchNode(props);
 
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
+@import url('./processNode.scss');
 
 </style>

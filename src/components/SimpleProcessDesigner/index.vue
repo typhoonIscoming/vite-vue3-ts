@@ -1,5 +1,5 @@
 <template>
-	<div class="simple-process-wrapper">
+	<div class="simple-process-wrapper flex flex-col justify-center items-center">
 		<SimpleProcessNode :flow-node="currentNode" />
 	</div>
 	<!-- 递归显示孩子节点  -->

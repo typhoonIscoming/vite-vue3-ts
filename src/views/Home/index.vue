@@ -1,6 +1,7 @@
 <template>
-	<div class="home">
+	<div class="home pt-30px">
 		<XHProcessNodeTree v-if="processNodeTree" :flow-node="processNodeTree" />
+		<div class="m-50px"></div>
 		<Camera />
 	</div>
 </template>
