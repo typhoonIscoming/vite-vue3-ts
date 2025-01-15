@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+// import { resolve } from 'path'
 import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import Legacy from '@vitejs/plugin-legacy'
@@ -9,6 +9,9 @@ import ElementPlus from 'unplugin-element-plus/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+//icon按需引入
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 // 自定义插件
 export default function createVitePlugins() {
@@ -46,7 +49,7 @@ export default function createVitePlugins() {
 				}
 			],
 			dts: 'src/types/auto-imports.d.ts',
-			resolvers: [ElementPlusResolver()],
+			resolvers: [ElementPlusResolver(), IconsResolver()],
 			eslintrc: {
 				enabled: false, // Default `false`
 				filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
@@ -62,6 +65,7 @@ export default function createVitePlugins() {
 				'src/components/**/**.{vue, md}',
 				'!src/components/DiyEditor/components/mobile/**'
 			]
-		})
+		}),
+		Icons()
 	]
 }

@@ -17,7 +17,7 @@ const include = [
 	'lodash-es',
 	'nprogress',
 	'web-storage-cache',
-	// '@iconify/iconify',
+	'@iconify/iconify',
 	/**
 	 * 主要功能：状态管理（useState， useStorage）、传感器（useMouse、useWindowSize、useGeolocation）
 	 * 副作用（useTitle、useFavicon）、时间(useInterval,useTimeout)、动画和过渡（useTransition、useSpring）等
