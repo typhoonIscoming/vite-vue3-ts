@@ -109,6 +109,10 @@ export interface SimpleFlowNode {
 	// 活动的状态，用于前端节点状态展示
 	activityStatus?: TaskStatusEnum
 }
+// 自定义的新增的属性
+export interface SuperSimpleFlowNode extends SimpleFlowNode {
+	icon?: string
+}
 // 候选人策略枚举 （ 用于审批节点。抄送节点 )
 export enum CandidateStrategy {
 	/**

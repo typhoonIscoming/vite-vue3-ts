@@ -1,5 +1,8 @@
 <template>
 	<div class="home pt-30px">
+		<div class="get-config">
+			<el-button type="primary" @click="handlePrint">打印数据</el-button>
+		</div>
 		<XHProcessNodeTree v-if="processNodeTree" :flow-node="processNodeTree" />
 		<div class="m-50px"></div>
 		<Camera />
@@ -10,7 +13,11 @@
 	import { NodeType, NodeId } from '@/components/SimpleProcessDesigner/config/consts'
 	import Camera from '@/components/camera/src/camera.vue'
 
-	const processNodeTree = ref()
+const processNodeTree = ref()
+
+const handlePrint = () => {
+	console.log('===', { ...processNodeTree.value })
+}
 
 	onMounted(() => {
 		processNodeTree.value = {

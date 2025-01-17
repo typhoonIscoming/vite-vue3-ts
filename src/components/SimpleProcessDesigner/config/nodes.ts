@@ -1,4 +1,4 @@
-import { SimpleFlowNode, NODE_DEFAULT_NAME, NodeType } from './consts'
+import { SimpleFlowNode, NODE_DEFAULT_NAME, NodeType, SuperSimpleFlowNode } from './consts'
 import { TaskStatusEnum } from './task'
 import { generateUUID } from '@/utils'
 
@@ -33,15 +33,33 @@ export function useTaskStatusClass(taskStatus: TaskStatusEnum | undefined): stri
 	return ''
 }
 
-export const nodeTypes: SimpleFlowNode[] = [
-	{
-		id: `Activity_${generateUUID()}`,
-		name: NODE_DEFAULT_NAME.get(NodeType.USER_TASK_NODE) as string,
-		type: NodeType.USER_TASK_NODE
-	},
-	{
-		id: `Activity_${generateUUID()}`,
-		name: NODE_DEFAULT_NAME.get(NodeType.COPY_TASK_NODE) as string,
-		type: NodeType.COPY_TASK_NODE
+export const initFlowNode: (type: NodeType) => SuperSimpleFlowNode = (type: NodeType) => {
+	switch (type) {
+		case NodeType.USER_TASK_NODE:
+			return {
+				id: `Activity_${generateUUID()}`,
+				name: NODE_DEFAULT_NAME.get(NodeType.USER_TASK_NODE) as string,
+				type: NodeType.USER_TASK_NODE,
+				icon: 'ep:avatar'
+			}
+		case NodeType.COPY_TASK_NODE:
+			return {
+				id: `Activity_${generateUUID()}`,
+				name: NODE_DEFAULT_NAME.get(NodeType.COPY_TASK_NODE) as string,
+				type: NodeType.COPY_TASK_NODE,
+				icon: 'material-symbols-light:content-copy'
+			}
+		default:
+			return {
+				id: `Activity_${generateUUID()}`,
+				name: NODE_DEFAULT_NAME.get(NodeType.USER_TASK_NODE) as string,
+				type: NodeType.USER_TASK_NODE,
+				icon: 'ep:avatar'
+			}
 	}
+}
+
+export const nodeTypes: SuperSimpleFlowNode[] = [
+	{ ...initFlowNode(NodeType.USER_TASK_NODE) }, // 审批人节点
+	{ ...initFlowNode(NodeType.COPY_TASK_NODE) } // 抄送人节点
 ]

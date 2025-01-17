@@ -48,7 +48,7 @@
 		const el = unref(elRef)
 		if (!el) return
 
-		await nextTick()
+		await nextTick(()=>{})
 
 		if (!icon) return
 

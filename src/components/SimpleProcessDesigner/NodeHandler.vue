@@ -3,17 +3,26 @@
 		<div class="node-handler text-0">
 			<el-popover
 				placement="top-start"
-				trigger="click"
+				trigger="hover"
 				width="auto"
+				teleported
+				popper-class="node-handler-popover"
 			>
 				<template #reference>
 					<el-icon size="20"><CirclePlus /></el-icon>
 				</template>
-				<div class="handler-item-wrapper flex items-center">
-					<div v-for="(item, i) in nodeTypes" :key="i" class="handler-item">
-						{{ item.name }}
+				<div class="handler-item-wrapper flex items-center w-fit">
+					<div
+						v-for="(item, i) in nodeTypes"
+						:key="i"
+						class="handler-item cursor-pointer"
+						@click="handleAddNode(item)"
+					>
+						<div class="node-icon-box text-center">
+							<Icon :icon="item.icon" :size="30" class="node-icon" />
+						</div>
+						<div class="node-name">{{ item.name }}</div>
 					</div>
-					<Icon icon="typcn:arrow-back-outline" />
 				</div>
 			</el-popover>
 		</div>
@@ -21,7 +30,41 @@
 </template>
 <script lang="tsx" setup>
 import { CirclePlus } from '@element-plus/icons-vue';
-import { nodeTypes } from './config/nodes';
-import { Icon } from '@iconify/vue';
+import { nodeTypes, initFlowNode } from './config/nodes';
+import { SuperSimpleFlowNode, SimpleFlowNode } from './config/consts'
 
+	const props = defineProps({
+		childNode: {
+			type: Object as () => SimpleFlowNode,
+			default: null
+		},
+		currentNode: {
+			type: Object as () => SimpleFlowNode,
+			required: true
+		}
+	})
+	const emits = defineEmits(['update:childNode'])
+
+const handleAddNode = (item: SuperSimpleFlowNode) => {
+	const { type } = item;
+	console.log('item', item)
+	const data = initFlowNode(type);
+	const node = {
+		...data,
+		childNode: props.childNode,
+	}
+	emits('update:childNode', node)
+}
 </script>
+<style lang="scss">
+	.node-handler-popover {
+		min-width: auto !important;
+	}
+	.handler-item-wrapper {
+		.handler-item {
+			& ~ .handler-item {
+				margin-left: 10px;
+			}
+		}
+	}
+</style>

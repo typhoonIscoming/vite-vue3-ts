@@ -13,7 +13,7 @@
 <script lang="tsx" setup>
 import { SimpleFlowNode } from '../config/consts';
 import { useWatchNode } from '../config/nodes';
-import XHStartHandler from '../NodeHandler.vue';
+import NodeHandler from '../NodeHandler.vue';
 // 开始节点
 defineOptions({ name: 'StartEventNode' });
 const props = defineProps({
