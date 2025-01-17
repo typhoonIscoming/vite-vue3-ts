@@ -1,5 +1,6 @@
 import { toNumber } from 'lodash-es'
-
+// @ts-ignore
+/* eslint-disable */
 /**
  *
  * @param component 需要注册的组件
@@ -450,3 +451,83 @@ export function jsonParse(str: string) {
 		return ''
 	}
 }
+
+export const isObject = (value: any) => value !== null && typeof value === 'object'
+export const isFunction = (value: any) => typeof value === 'function'
+
+export const isString = (value: any) => typeof value === 'string'
+export const isBoolean = (value: any) => typeof value === 'boolean'
+export const isNumber = (value: any) => typeof value === 'number'
+export const isUndef = (value: any) => typeof value === 'undefined'
+
+export const isDev =
+	process.env.NODE_ENV === 'development' ||
+	process.env.NODE_ENV === 'test' ||
+	import.meta.env.MODE === 'development' ||
+	import.meta.env.MODE === 'test'
+
+export const isBrowser = !!(
+	typeof window !== 'undefined' &&
+	window.document &&
+	window.document.createElement
+)
+
+export function getTargetElement(target: any, defaultElement?: HTMLElement) {
+	if (!isBrowser) {
+		return undefined
+	}
+
+	if (!target) {
+		return defaultElement
+	}
+
+	let targetElement
+
+	if (isFunction(target)) {
+		targetElement = target()
+	} else if ('current' in target) {
+		targetElement = target.current
+	} else {
+		targetElement = target
+	}
+
+	return targetElement
+}
+
+const checkIfAllInShadow = (targets: HTMLElement[]) => {
+	return targets.every(item => {
+		const targetElement = getTargetElement(item)
+		if (!targetElement) return false
+		if (targetElement.getRootNode() instanceof ShadowRoot) return true
+	})
+}
+
+const getShadow = (node: HTMLElement) => {
+	if (!node) {
+		return document
+	}
+	return node.getRootNode()
+}
+
+export const getDocumentOrShadow = (target: HTMLElement) => {
+	if (!target || !document.getRootNode) {
+		return document
+	}
+
+	const targets = Array.isArray(target) ? target : [target]
+
+	if (checkIfAllInShadow(targets)) {
+		return getShadow(getTargetElement(targets[0]))
+	}
+
+	return document
+}
+
+export function depsAreSame(oldDeps: Array<any>, deps: Array<any>) {
+	if (oldDeps === deps) return true
+	for (let i = 0; i < oldDeps.length; i++) {
+		if (!Object.is(oldDeps[i], deps[i])) return false
+	}
+	return true
+}
+
