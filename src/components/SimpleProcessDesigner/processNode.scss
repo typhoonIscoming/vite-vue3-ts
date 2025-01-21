@@ -4,16 +4,32 @@
 }
 .node-width {
 	width: 200px;
+	box-sizing: border-box;
+}
+.node-title-container{
+	color: #fff;
 }
 /* 开始节点 */
 .start-node {
-	border-radius: 30px;
+	border-radius: 10px;
+	overflow: hidden;
 }
 .node-wrapper{
 	cursor: pointer;
 	.node-container{
 		@extend .node-width;
+		@extend .start-node;
 		border: 1px solid #fafafa;
+	}
+	.close-btn{
+		display: none;
+	}
+	.node-root{
+		&:hover{
+			.close-btn{
+				display: initial;
+			}
+		}
 	}
 }
 // 结束节点包装
@@ -105,4 +121,14 @@
 		display: flex;
 		transform: translateX(-50%);
 	}
+}
+
+// 审批节点
+.approve-node-wrapper{
+	.approve-node{
+		@extend .node-width;
+		@extend .node-shadow-box;
+		border-radius: 10px;
+	}
+	
 }

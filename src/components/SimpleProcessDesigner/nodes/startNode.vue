@@ -1,7 +1,10 @@
 <template>
 	<div class="node-wrapper">
-		<div class="start-node node-container p-10px inline-block node-shadow-box">
-			<div>{{ currentNode.name }}</div>
+		<div class="start-node node-container inline-block node-shadow-box">
+			<div class="node-title-container p-5px bg-#556B96">
+				{{ currentNode.name }}
+			</div>
+			<div class="node-content p-10px">所有人</div>
 		</div>
 		<NodeHandler
 			v-if="currentNode"

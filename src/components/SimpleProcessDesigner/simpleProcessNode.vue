@@ -9,6 +9,7 @@
 		<XHApproveNode
 			v-if="currentNode && currentNode.type === NodeType.USER_TASK_NODE"
 			:flow-node="currentNode"
+			@update:flow-node="handleModelValueUpdate"
 		/>
 		<!--结束节点-->
 		<XHEndNode
@@ -24,25 +25,35 @@
 	/>
 </template>
 <script lang="tsx" setup>
-import { SimpleFlowNode, NodeType } from './config/consts'
-import XHStartNode from './nodes/startNode.vue';
-import XHEndNode from './nodes/endNode.vue';
-import XHApproveNode from './nodes/approve.vue';
-import { useWatchNode } from './config/nodes';
+	import { SimpleFlowNode, NodeType } from './config/consts'
+	import XHStartNode from './nodes/startNode.vue'
+	import XHEndNode from './nodes/endNode.vue'
+	import XHApproveNode from './nodes/approve.vue'
+	import { useWatchNode } from './config/nodes'
 
-defineOptions({ name: 'ProcessNodeTree' });
+	defineOptions({ name: 'ProcessNodeTree' })
 
-const props = defineProps({
-	flowNode: {
-		type: Object as () => SimpleFlowNode,
-		default: null
-	},
-})
+	const props = defineProps({
+		flowNode: {
+			type: Object as () => SimpleFlowNode,
+			default: null
+		}
+	})
 
-const currentNode = useWatchNode(props);
+	const currentNode = useWatchNode(props)
+	const emits = defineEmits<{
+		'update:flowNode': [node: SimpleFlowNode | undefined]
+		'find:recursiveFindParentNode': [
+			nodeList: SimpleFlowNode[],
+			curentNode: SimpleFlowNode,
+			nodeType: number
+		]
+	}>()
 
+	const handleModelValueUpdate = (updateValue: SimpleFlowNode) => {
+		emits('update:flowNode', updateValue)
+	}
 </script>
 <style lang="scss">
-@import url('./processNode.scss');
-
+	@import url('./processNode.scss');
 </style>
