@@ -2,6 +2,7 @@
 	<div class="node-handler-wrapper">
 		<div class="node-handler text-0">
 			<el-popover
+				v-model:visible="visible"
 				placement="top-start"
 				trigger="hover"
 				width="auto"
@@ -9,7 +10,7 @@
 				popper-class="node-handler-popover"
 			>
 				<template #reference>
-					<el-icon size="20"><CirclePlus /></el-icon>
+					<Icon icon="ep:circle-plus-filled" color="#1675FE" size="20" />
 				</template>
 				<div class="handler-item-wrapper flex items-center w-fit">
 					<div
@@ -29,21 +30,21 @@
 	</div>
 </template>
 <script lang="tsx" setup>
-import { CirclePlus } from '@element-plus/icons-vue';
 import { nodeTypes, initFlowNode } from './config/nodes';
 import { SuperSimpleFlowNode, SimpleFlowNode } from './config/consts'
 
-	const props = defineProps({
-		childNode: {
-			type: Object as () => SimpleFlowNode,
-			default: null
-		},
-		currentNode: {
-			type: Object as () => SimpleFlowNode,
-			required: true
-		}
-	})
-	const emits = defineEmits(['update:childNode'])
+const props = defineProps({
+	childNode: {
+		type: Object as () => SimpleFlowNode,
+		default: null
+	},
+	currentNode: {
+		type: Object as () => SimpleFlowNode,
+		required: true
+	}
+})
+const emits = defineEmits(['update:childNode'])
+const visible = ref(false);
 
 const handleAddNode = (item: SuperSimpleFlowNode) => {
 	const { type } = item;
@@ -54,6 +55,7 @@ const handleAddNode = (item: SuperSimpleFlowNode) => {
 		childNode: props.childNode,
 	}
 	emits('update:childNode', node)
+	visible.value = false;
 }
 </script>
 <style lang="scss">

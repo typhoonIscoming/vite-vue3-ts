@@ -11,6 +11,7 @@ declare module 'vue' {
     Camera: typeof import('./../components/camera/src/camera.vue')['default']
     Close: typeof import('./../components/SimpleProcessDesigner/Close.vue')['default']
     ConfigGlobal: typeof import('./../components/ConfigGlobal/src/ConfigGlobal.vue')['default']
+    CopyTaskNode: typeof import('./../components/SimpleProcessDesigner/nodes/copyTaskNode.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElPopover: typeof import('element-plus/es')['ElPopover']

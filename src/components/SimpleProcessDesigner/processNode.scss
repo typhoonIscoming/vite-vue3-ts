@@ -124,11 +124,14 @@
 }
 
 // 审批节点
-.approve-node-wrapper{
+.approve-node-wrapper, .copy-task-node{
 	.approve-node{
 		@extend .node-width;
 		@extend .node-shadow-box;
 		border-radius: 10px;
 	}
-	
+}
+// 抄送节点
+.copy-task-node{
+
 }

@@ -11,6 +11,12 @@
 			:flow-node="currentNode"
 			@update:flow-node="handleModelValueUpdate"
 		/>
+		<!--抄送节点-->
+		<XHCopyTaskNode
+			v-if="currentNode && currentNode.type === NodeType.COPY_TASK_NODE"
+			:flow-node="currentNode"
+			@update:flow-node="handleModelValueUpdate"
+		/>
 		<!--结束节点-->
 		<XHEndNode
 			v-if="currentNode && currentNode.type === NodeType.END_EVENT_NODE"
@@ -28,7 +34,8 @@
 	import { SimpleFlowNode, NodeType } from './config/consts'
 	import XHStartNode from './nodes/startNode.vue'
 	import XHEndNode from './nodes/endNode.vue'
-	import XHApproveNode from './nodes/approve.vue'
+import XHApproveNode from './nodes/approve.vue'
+import XHCopyTaskNode from './nodes/copyTaskNode.vue';
 	import { useWatchNode } from './config/nodes'
 
 	defineOptions({ name: 'ProcessNodeTree' })
