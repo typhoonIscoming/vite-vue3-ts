@@ -49,6 +49,33 @@ export const initFlowNode: (type: NodeType) => SuperSimpleFlowNode = (type: Node
 				type: NodeType.COPY_TASK_NODE,
 				icon: 'material-symbols-light:content-copy'
 			}
+		case NodeType.CONDITION_BRANCH_NODE:
+			return {
+				id: `Activity_${generateUUID()}`,
+				name: NODE_DEFAULT_NAME.get(NodeType.CONDITION_BRANCH_NODE) as string,
+				type: NodeType.CONDITION_BRANCH_NODE,
+				icon: 'material-symbols:schema-outline-rounded',
+				conditionNodes: [
+					{
+						id: 'Flow_' + generateUUID(),
+						name: '条件1',
+						showText: '',
+						type: NodeType.CONDITION_NODE,
+						childNode: undefined,
+						conditionType: 1,
+						defaultFlow: false
+					},
+					{
+						id: 'Flow_' + generateUUID(),
+						name: '条件2',
+						showText: '',
+						type: NodeType.CONDITION_NODE,
+						childNode: undefined,
+						conditionType: 1,
+						defaultFlow: false
+					}
+				]
+			}
 		default:
 			return {
 				id: `Activity_${generateUUID()}`,
@@ -61,5 +88,6 @@ export const initFlowNode: (type: NodeType) => SuperSimpleFlowNode = (type: Node
 
 export const nodeTypes: SuperSimpleFlowNode[] = [
 	{ ...initFlowNode(NodeType.USER_TASK_NODE) }, // 审批人节点
-	{ ...initFlowNode(NodeType.COPY_TASK_NODE) } // 抄送人节点
+	{ ...initFlowNode(NodeType.COPY_TASK_NODE) }, // 抄送人节点
+	{ ...initFlowNode(NodeType.CONDITION_BRANCH_NODE) } // 条件节点
 ]

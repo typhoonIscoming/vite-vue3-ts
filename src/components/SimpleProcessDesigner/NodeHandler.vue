@@ -48,7 +48,6 @@ const visible = ref(false);
 
 const handleAddNode = (item: SuperSimpleFlowNode) => {
 	const { type } = item;
-	console.log('item', item)
 	const data = initFlowNode(type);
 	const node = {
 		...data,

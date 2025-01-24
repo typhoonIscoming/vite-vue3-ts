@@ -433,6 +433,7 @@ NODE_DEFAULT_NAME.set(NodeType.USER_TASK_NODE, '审批人')
 NODE_DEFAULT_NAME.set(NodeType.COPY_TASK_NODE, '抄送人')
 NODE_DEFAULT_NAME.set(NodeType.CONDITION_NODE, '条件')
 NODE_DEFAULT_NAME.set(NodeType.START_USER_NODE, '发起人')
+NODE_DEFAULT_NAME.set(NodeType.CONDITION_BRANCH_NODE, '条件分支节点')
 
 // 候选人策略。暂时不从字典中取。 后续可能调整。控制显示顺序
 export const CANDIDATE_STRATEGY: DictDataVO[] = [

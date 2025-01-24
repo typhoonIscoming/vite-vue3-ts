@@ -16,6 +16,7 @@ declare module 'vue' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElPopover: typeof import('element-plus/es')['ElPopover']
     EndNode: typeof import('./../components/SimpleProcessDesigner/nodes/endNode.vue')['default']
+    ExclusiveNode: typeof import('./../components/SimpleProcessDesigner/nodes/exclusiveNode.vue')['default']
     Icon: typeof import('./../components/Icon/src/Icon.vue')['default']
     NodeHandler: typeof import('./../components/SimpleProcessDesigner/NodeHandler.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

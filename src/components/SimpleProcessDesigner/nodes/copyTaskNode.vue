@@ -1,8 +1,8 @@
 <template>
-	<div class="node-wrapper copy-task-node relative">
-		<div class="node-root approve-node w-200px relative">
+	<div class="node-wrapper copy-task-node relative bg-white">
+		<div class="node-root copy-node w-200px relative">
 			<div class="node-container">
-				<div class="node-title-container p-5px text-wrap bg-#FE943E relative">
+				<div class="node-title-container p-5px text-wrap bg-#4CA3FC relative">
 					<Icon class="absolute left-5px top-0 bottom-0 m-auto" icon="ep:position" />
 					抄送人
 				</div>

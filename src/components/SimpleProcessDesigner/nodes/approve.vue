@@ -1,5 +1,5 @@
 <template>
-	<div class="node-wrapper approve-node-wrapper relative">
+	<div class="node-wrapper approve-node-wrapper relative bg-white">
 		<div class="node-root approve-node w-200px relative">
 			<div class="node-container">
 				<div class="node-title-container p-5px text-wrap bg-#FE943E relative">

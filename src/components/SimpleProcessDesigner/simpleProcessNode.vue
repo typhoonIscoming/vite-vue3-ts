@@ -1,5 +1,5 @@
 <template>
-	<div class="simple-process-wrapper w-fit">
+	<div class="simple-process-wrapper w-fit bg-white">
 		<!--开始节点-->
 		<XHStartNode
 			v-if="currentNode && currentNode.type === NodeType.START_USER_NODE"
@@ -17,6 +17,12 @@
 			:flow-node="currentNode"
 			@update:flow-node="handleModelValueUpdate"
 		/>
+		<!--条件节点-->
+		<XHExclusiveNode
+			v-if="currentNode && currentNode.type === NodeType.CONDITION_BRANCH_NODE"
+			:flow-node="currentNode"
+			@update:flow-node="handleModelValueUpdate"
+		/>
 		<!--结束节点-->
 		<XHEndNode
 			v-if="currentNode && currentNode.type === NodeType.END_EVENT_NODE"
@@ -31,12 +37,13 @@
 	/>
 </template>
 <script lang="tsx" setup>
-	import { SimpleFlowNode, NodeType } from './config/consts'
-	import XHStartNode from './nodes/startNode.vue'
-	import XHEndNode from './nodes/endNode.vue'
+import { SimpleFlowNode, NodeType } from './config/consts'
+import XHStartNode from './nodes/startNode.vue'
+import XHEndNode from './nodes/endNode.vue'
 import XHApproveNode from './nodes/approve.vue'
 import XHCopyTaskNode from './nodes/copyTaskNode.vue';
-	import { useWatchNode } from './config/nodes'
+import XHExclusiveNode from './nodes/exclusiveNode.vue';
+import { useWatchNode } from './config/nodes'
 
 	defineOptions({ name: 'ProcessNodeTree' })
 
