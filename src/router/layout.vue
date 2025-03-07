@@ -22,5 +22,6 @@
 <style lang="scss" scoped>
 .layout{
 	background: url('@/assets/bg.png') no-repeat;
+	background-size: 100% 100%;
 }
 </style>
