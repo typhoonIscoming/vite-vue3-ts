@@ -17,6 +17,7 @@
 		"ts:check": "vue-tsc --noEmit"
 	},
 	"dependencies": {
+		"@dataview/datav-vue3": "^0.0.0-test.1672506674342",
 		"@iconify/iconify": "^3.1.1",
 		"@iconify/json": "^2.2.295",
 		"element-plus": "^2.9.0",

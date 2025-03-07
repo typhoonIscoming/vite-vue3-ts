@@ -79,6 +79,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 				{
 					find: /\@\//,
 					replacement: `${pathResolve('src')}/`
+				},
+				{
+					find: '@dataview/datav-vue3',
+					replacement: '@dataview/datav-vue3/es/index.mjs'
 				}
 			]
 		},

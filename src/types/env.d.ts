@@ -6,7 +6,7 @@ declare module '*.vue' {
 	const component: DefineComponent<{}, {}, any>
 	export default component
 }
-
+declare module '@dataview/datav-vue3'
 interface ImportMetaEnv {
 	readonly VITE_APP_TITLE: string
 	readonly VITE_PORT: number
