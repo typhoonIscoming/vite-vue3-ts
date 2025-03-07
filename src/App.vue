@@ -6,7 +6,8 @@
 
 <template>
 	<ConfigGlobal>
-		<router-view />
+		<!-- <router-view /> -->
+		<Layout />
 	</ConfigGlobal>
 </template>
 

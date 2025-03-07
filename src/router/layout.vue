@@ -11,7 +11,7 @@
 		name: 'Layout',
 		setup() {
 			return () => (
-				<section class={[prefixCls, 'w-[100%] h-[100%] relative']}>
+				<section class={[prefixCls, 'w-[100%] h-[100%] relative', 'layout']}>
 					<RouterView />
 				</section>
 			)
@@ -19,4 +19,8 @@
 	})
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.layout{
+	background: url('@/assets/bg.png') no-repeat;
+}
+</style>

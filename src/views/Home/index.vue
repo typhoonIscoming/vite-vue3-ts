@@ -1,19 +1,13 @@
 <template>
-	<div class="home pt-30px">
-		<Decoration5 style="width:300px; height:40px;" />
-		<!-- <div class="get-config">
-			<el-button type="primary" @click="handlePrint">打印数据</el-button>
-		</div> -->
-		<!-- <XHProcessNodeTree v-if="processNodeTree" :flow-node="processNodeTree" />
-		<div class="m-50px"></div> -->
-		<!-- <Camera /> -->
+	<div class="home">
+		<Header />
 	</div>
 </template>
 <script setup lang="tsx">
-import { Decoration5 } from '@dataview/datav-vue3';
-import XHProcessNodeTree from '@/components/SimpleProcessDesigner'
+// import XHProcessNodeTree from '@/components/SimpleProcessDesigner'
 import { NodeType, NodeId } from '@/components/SimpleProcessDesigner/config/consts'
-import Camera from '@/components/camera/src/camera.vue'
+// import Camera from '@/components/camera/src/camera.vue'
+import Header from '@/components/Header';
 
 const processNodeTree = ref()
 
