@@ -8,6 +8,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Approve: typeof import('./../components/SimpleProcessDesigner/nodes/approve.vue')['default']
+    BarageItem: typeof import('./../components/Barrage/BarageItem.vue')['default']
+    BarrageItem: typeof import('./../components/Barrage/BarrageItem.vue')['default']
     Camera: typeof import('./../components/camera/src/camera.vue')['default']
     Close: typeof import('./../components/SimpleProcessDesigner/Close.vue')['default']
     ConfigGlobal: typeof import('./../components/ConfigGlobal/src/ConfigGlobal.vue')['default']

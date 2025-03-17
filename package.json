@@ -20,6 +20,7 @@
 		"@dataview/datav-vue3": "^0.0.0-test.1672506674342",
 		"@iconify/iconify": "^3.1.1",
 		"@iconify/json": "^2.2.295",
+		"barrage-ui": "^1.4.1",
 		"element-plus": "^2.9.0",
 		"highlight.js": "^11.10.0",
 		"lodash-es": "^4.17.21",
